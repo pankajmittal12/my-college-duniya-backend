@@ -5,7 +5,7 @@ const router = express.Router();
 const {
     getUniversities,
     getUniversityById
-} = require("../controllers/universityController");
+} = require("../controllers/universitiesController");
 
 router.get("/", getUniversities);
 
