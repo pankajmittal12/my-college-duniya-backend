@@ -36,12 +36,12 @@ const getCourses = async (req, res) => {
 const getCourseById = async (req, res) => {
     try {
 
-        const { course_id } = req.params;
+        const { course_name } = req.body;
 
         const { data, error } = await db
             .from("courses")
             .select("*")
-            .eq("course_id", course_id)
+            .eq("course_name", course_name)
             .single();
 
         if (error) {

@@ -5,10 +5,10 @@ const router = express.Router();
 const {
     getUniversities,
     getUniversityById
-} = require("../controllers/universityController");
+} = require("../controllers/universitiesController");
 
 router.get("/", getUniversities);
 
-router.get("/:university_id", getUniversityById);
+router.get("/:university_name", getUniversityById);
 
 module.exports = router;

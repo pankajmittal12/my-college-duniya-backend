@@ -4,12 +4,7 @@ const db = require("../config/supabase");
 const getUniversities = async (req, res) => {
     try {
 
-        const { data, error } = await db
-            .from("universities")
-            .select("*")
-            .order("university_name", {
-                ascending: true
-            });
+        const { data, error } = await db.from("universities").select('*');
 
         if (error) {
             return res.status(400).json({
@@ -36,12 +31,12 @@ const getUniversities = async (req, res) => {
 const getUniversityById = async (req, res) => {
     try {
 
-        const { university_id } = req.params;
+        const { university_name } = req.body;
 
         const { data, error } = await db
             .from("universities")
             .select("*")
-            .eq("university_id", university_id)
+            .eq("university_name", university_name)
             .single();
 
         if (error) {

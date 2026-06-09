@@ -7,8 +7,8 @@ const {
     getCourseById
 } = require("../controllers/courseController");
 
-router.get("/courses", getCourses);
+router.get("/", getCourses);
 
-router.get("/:course_id", getCourseById);
+router.get("/:course_name", getCourseById);
 
 module.exports = router;
