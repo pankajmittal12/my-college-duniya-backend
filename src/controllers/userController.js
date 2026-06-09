@@ -1,8 +1,6 @@
 const db = require("../config/supabase");
 const bcrypt = require("bcrypt");
 
-db;
-
 // Get all users
 const getUsers = async (req, res) => {
   try {
